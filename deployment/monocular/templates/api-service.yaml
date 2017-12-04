@@ -4,6 +4,7 @@ metadata:
   name: {{ template "fullname" . }}-api
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
 {{- if .Values.api.service.annotations }}
   annotations:
 {{ toYaml .Values.api.service.annotations | indent 4 }}
